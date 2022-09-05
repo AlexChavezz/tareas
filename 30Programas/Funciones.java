@@ -33,7 +33,7 @@ class Funciones {
     }
 
     // 18.- FUNCION QUE IMPRIMA UN ARRAY DE CUALQUIER TIPO DE DATO
-    public static void printArray(int[] array)
+    public void printArray(int[] array)
     {
         System.out.println("IMPRIMIENDO...");
         for(int i = 0; i < array.length; i++)
@@ -85,21 +85,62 @@ class Funciones {
         names.remove(value);
     }
 
-    // 24.- FUCION QUE RETORNE UN BOLEANO SI EVALUANDO SI UNA LISTA ESTA VACIA O NO
+    // 24.- FUCION QUE RETORNE UN BOLEANO EVALUANDO SI UNA LISTA ESTA VACIA O NO
     public static boolean isArrayListEmpty(ArrayList<String> names)
     {
         return names.isEmpty();
     }
 
-
-    
-    public static void main(String[] args)
-    {
-        ArrayList<String> names = getArrayList();
-        insertNode(names); 
-        insertNode(names); 
-        printListJava(names);
-        removeNodoByValue(names);
-        printListJava(names);
+    // 25.- FUNCION QUE VERIFIQUE SI UN STRING ESTA CONTENIDO EN UNA LISTA Y RETORNAR UN TIPO DE DATO BOLEANO
+    public static boolean isWordInArrayList(ArrayList<String> words){
+        System.out.println("Palabra para buscar: ");
+        String value = input.next();
+        return words.contains(value);
     }
+    
+    // 26.- FUNCION QUE RESIVA UN LISTA DE NUMEROS FLOTANTES Y RETORNE UN ENTERO CON LA LONGITUD DE LA LISTA
+    public static int getLength(ArrayList<Float> numeros){
+        return numeros.size();
+    }
+    // 27.- FUNCION QUE DIVIDA DOS ENTEROS Y RETORNE UN TIPO DE DATO FLOTANTE
+    public static float divison(int n1, int n2){
+        return n1 / n2;
+    } 
+
+    // 28.- FUNCION QUE RESIVA UNA LISTA DE BOOLEANOS Y ME RETORNE UNA LISTA CON TODOS LOS TIPOS DE DATOS CONTRARIOS
+    //  ES DECIR LO QUE ERA TRUE DEBE DE SER FALSE Y VISREVERSA.
+    public static ArrayList<Boolean> modifyArrayList(ArrayList<Boolean> boleanos){
+        ArrayList<Boolean> newList = new ArrayList<Boolean>();
+        for (int i = 0; i < boleanos.size(); i++)
+        {
+            if(boleanos.get(i))
+            {
+                newList.set(i, false);
+            }
+            else
+            {
+                newList.set(i, true);
+            }
+        }
+        return newList;
+    }
+    // 29.- FUNCION QUE RESIVA UN ARRAY DE FLOATS Y RETORNE LA SUMA DE TODOS LOS INDICES
+    public static float sumaFloats(float[] numerosFlotantes)
+    {
+        float suma = 0;
+        for(int i = 0; i < numerosFlotantes.length; i++)
+        {
+            suma += numerosFlotantes[i];
+        }
+        return suma;
+    }
+    // 30.-FUNCION DONDE SE CREE UN OBJETO DE ESTA MISMA CLASE Y MANDE A IMPRIMIR UN ARRAY
+    public static void mainTwo()
+    {
+        int[] array = {1, 2, 3, 4, 5};
+        Funciones objeto = new Funciones();
+        objeto.printArray(array);
+    }
+
+    public static void main(String[] args){}
 };
