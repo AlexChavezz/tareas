@@ -85,8 +85,64 @@ bool isThereZInTheWord()
     return status;
 }
 
+// 8.- FUNCION QUE RESIVA UN ARRAY DE NUMEROS Y RETORNE UN ENTERO CON EL VALOR 
+// DEL NUMERO MAYOR QUE EXISTA EN EL ARREGLO
+int getMaxNumber(vector<int> numberList)
+{
+    int max = 0;
+    for(int i = 0; i < numberList.size(); i++)
+    {
+        if(numberList[i] > max)
+        {
+            max = numberList[i];
+        }
+    }
+    return max;
+}
+
+// 9.- FUNCION QUE RESIVA UN ARREGLO DE NUMEROS Y RETORNE EL NUMERO MENOR
+int getMinNumber(vector<int> listNumber)
+{
+    int min = listNumber[0];
+    for (int i = 0; i < listNumber.size(); i++)
+    {
+        if(listNumber[i] < min)
+        {
+            min = listNumber[i];
+        }
+    }
+    return min;
+}
+
+// 10.- FUNCTION QUE RESIVA UN ARREGLO DE NUMEROS LE INCREMENTE EN 2 A CADA POSICION 
+// Y RETORNE UN NUEVO ARREGLO
+vector<int> incrementList(vector<int> listNumber)
+{
+    vector <int> newListNumber(listNumber.size());
+    for (int i = 0; i < listNumber.size(); i++)
+    {
+        newListNumber[i] = listNumber[i]+2;
+    }
+    return newListNumber;
+}
+
+// 11.- FUNCTION QUE RESIVA UN ARREGLO DE NUMEROS Y LE DECREMENTE EN 2 A CADA POSICION
+// Y RETORNE UN NUEVO ARREGLO
+vector<int> decrementList(vector<int> listNumber)
+{
+    vector <int> newListNumber(listNumber.size());
+    int i = -1;
+    while(i++, i < listNumber.size()){
+        newListNumber[i] = listNumber[i] - 2; 
+    }
+    return newListNumber;
+}
+
 int main(){
-    // vector<int> list = getList();
+    vector<int> list = getList();
+    vector <int> decrement = decrementList(list);
+    printList(decrement);
     // bool result = isEmpty(list);
+    // recursivityFunction();
     return 0;
 }
