@@ -3,25 +3,25 @@
 using namespace std;
 
 
-vector <int> burbleMethod(vector <int> &v)
+vector <int> burbleMethod(vector <int> v)
 {
-    int temp;
+    int aux;
     for (int i = 0; i < v.size(); i++)
     {
         for (int j = 0; j < v.size() - 1; j++)
         {
             if (v[j] > v[j + 1])
             {
-                temp = v[j];
+                aux = v[j];
                 v[j] = v[j + 1];
-                v[j + 1] = temp;
+                v[j + 1] = aux;
             }
         }
     }
     return v;
 }
 
-void printVector(vector <int> &v)
+void printVector(vector <int> v)
 {
     for (int i = 0; i < v.size(); i++)
     {
@@ -34,6 +34,6 @@ int main()
 {
     vector <int> v = { 5, 4, 3, 2, 1 };
     vector orderArray = burbleMethod(v);
-    printVector(orderArray);
+    printVector(v);
     return 0;
 }
